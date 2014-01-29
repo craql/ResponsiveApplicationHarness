@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+
+<script>
+var PhoneGapMode = false;
+
+if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") == -1) {
+    PhoneGapMode = true;
+}
+
+</script>
+<script type="text/javascript" src="_include.js"></script>
+<title>Responsive Application Harness</title>
+
+</head>
+
+<body onhashchange="App.hashChangeHandler();">
+<div id="appWrapper" class="init-view init-dataset">
+	<div id="menuDrawer" class="app-drawer"></div>
+    <div id="filterDrawer" class="app-drawer"></div>
+    <div id="viewsPanel" >
+    	<div id="viewsPanelHeader">
+            <div id="menuButton" class="headerDrawerToggle" onclick="App.toggleMenuDrawer();"> &nbsp; </div>
+            <div id="filterButton" class="headerDrawerToggle" onclick="App.toggleFilterDrawer();"> filter </div>
+            <div id="viewsPanelTitle"></div>
+        </div>
+        <!-- render views here -->
+        <div id="viewsPanelContent" onclick="App.closeDrawers()"></div>
+    </div>
+</div>
+<script>
+	Craydent.DEBUG_MODE = true;
+
+	var specs = {devmode:true};
+	 var App;
+
+    if (PhoneGapMode) {
+        document.addEventListener("deviceready", pgInit, false);        
+    } else {
+        pgInit();
+    }
+
+    function pgInit() {
+        App = new PhoneGapEventsApp(specs);        
+    }
+</script>
+</body>
+</html>

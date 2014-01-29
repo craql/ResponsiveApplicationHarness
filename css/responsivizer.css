@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* responsive CSS*/
+
+#responsivizerDebug {
+	position: absolute;
+	background-color: rgba(0,0,0,.5);
+	bottom: 0;
+	right: 50px;
+	padding: 10px;
+	color: #fff;
+	cursor:pointer;
+}
+#responsivizerDebug:hover{
+	background-color: rgba(0,0,0,.7);	
+}
+
+/*-------------------------------------------------------------------->
+	# | DESKTOP
+<--------------------------------------------------------------------*/	
+.desktop-mode #listView .app-list-item:hover {
+	background-color: #f9f9f9 !important;
+}
+
+/*-------------------------------------------------------------------->
+	# | MULTI-VIEW
+<--------------------------------------------------------------------*/	
+.multi-view #listView{
+	right:auto;
+	width:320px;
+}
+.multi-view #mapView {
+    left: 320px;
+    display: block;
+}
+
+
+/*-------------------------
+GRID
+-------------------------*/	
+.multi-view #gridView{
+	right: 320px;
+	width: auto;
+}
+
+.multi-view .grid-view #mapView {
+    left: auto;
+    width: 320px;
+}
+
+/*-------------------------
+	VIEW MENU
+-------------------------*/	
+.multi-view .app-view-mode-option {
+    width: 50%;
+}
+
+
+.multi-view #appMapViewContent .app-view-modes-bar {
+    display: none;
+}
+.multi-view #appMapViewContent {
+top: 0 ;
+}
+#ldhdiv {
+    width:  40px;
+    line-height: 40px;
+    text-align: center;
+    background: rgba(0,0,0,.5);
+    left: auto;
+    top: auto;
+}
+
+/* details view */
+.multi-view #listView .app-view-modes-bar {
+    display: block;
+}
+
+.multi-view #appDetailsViewContent {
+    z-index: 1000;
+    text-align: center;
+    background: rgba(0,0,0,.6);
+}
+
+.multi-view #appDetailsWrapper {
+    margin: 20px auto;
+	width: 70%;
+	min-width: 400px;
+	box-shadow: 0 0 15px 2px rgba(0,0,0,.3);
+	
+}

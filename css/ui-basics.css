@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* UI... */
+
+.ui-block{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+
+.ui-overlay,.ui-overlay-std{
+	background-color: rgba(0,0,0,.7);
+	z-index: 100;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	display:none;
+}
+
+/*-------------------------
+	UI Overlays
+-------------------------*/	
+
+.ui-overlay-std{
+display:none;
+}
+.ui-overlay-std.active,.ui-overlay.active{
+display:block;
+}
+.ui-overlay-panel {
+	background: #eee;
+	position:absolute;
+	top:20px;
+	left:20px;
+	bottom:20px;
+	right:20px;
+	box-shadow:0 0 4px 0 rgba(0,0,0,.7)
+}
+/*-------------------------
+	UI Panels
+-------------------------*/	
+.ui-panel{
+	position:relative;
+}
+.ui-panel-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 30px;
+    background: #ddd;
+    /* padding: 0 10px; */
+    font-size: 14px;
+    width: 40px;
+    text-align: center;
+    cursor: pointer;
+}
+.ui-panel-close:hover {
+    background: #ccc;
+}
+.ui-panel-title {
+    font-weight: bold;
+    padding: 5px;
+    color: #007ac2;
+}
+
+.ui-floating-panel{
+	background: #eee;
+	position:absolute;
+	box-shadow:0 0 4px 0 rgba(0,0,0,.7);
+	margin:20px;
+	
+}
+/*-------------------------
+	UI Panel Content
+-------------------------*/	
+.ui-panel-content {
+	min-height:50px;
+	margin-bottom:10px;
+}
+.ui-panel-content.ui-inset{
+	margin:5px;
+	background:#fff;
+	box-shadow:inset 0 0 3px 0 rgba(0,0,0,.5);
+	border:1px solid #efefef;
+}
+
+
+.ui-panel-content-option {
+    /* height: 40px; */
+    /* line-height: 40px; */
+    padding: 10px 10px;
+    position: relative;
+    /* min-height: 30px; */
+    cursor: pointer;
+    font-size: 14px;
+	clear:both;
+}
+.ui-panel-content-option:hover {
+    background-color: rgba(0,0,0,.1);
+}
+.ui-panel-content-option.agolThumb {
+	padding-left: 90px;
+	height: 50px;
+}
+
+.ui-panel-option-agolThumb {
+	position:absolute;
+	height: 50px;
+	margin:10px;
+	top:0;
+	left:0;
+}
+
+.ui-unselectable {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.text-shadowed{
+	text-shadow: 0 1px 1px #333;
+}

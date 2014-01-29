@@ -1,0 +1,714 @@
+/* CSS Document 
+panel purple:#7868A7
+green: 5B955B
+*/
+
+.tiny{
+font-size:9px;
+}
+
+
+/*--------------------------------------------------------------------------------------/
+	1 MAP VIEW | #mapView
+---------------------------------------------------------------------------------------*/
+#appMapViewContent {
+	top:50px;
+}
+
+#appMap {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+    #mapLocateButton {
+      position: absolute;
+      top: 95px;
+      left: 20px;
+      z-index: 50;
+    }
+	
+	g {
+cursor: pointer;
+}
+
+
+#mapFloorSelector{
+	right:0px;
+/*	top:0px;*/
+bottom: 140px;
+	z-index:50;
+	position: absolute;  
+	margin: 20px;
+	text-align:center;
+}
+
+.floor-selector-option {
+    padding: 5px 0;
+    cursor: pointer;
+	line-height: 34px;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+    margin: 3px 0;
+	width:50px;
+}
+.floor-selector-option.current {
+    background-color: #aaa;
+}
+.floor-selector-label{
+	    padding: 2px 0;
+    background: rgba(0,0,0,.7);
+    color: #fff;
+	width:50px;
+    margin-bottom:3px;
+	font-size:12px;
+}
+/*.floor-selector-option {
+    padding: 5px;
+    cursor: pointer;
+	line-height: 34px;
+}
+.floor-selector-option.current {
+    background-color: rgba(0,0,0,.2);
+}*/
+/*-------------------------
+	Features panel
+-------------------------*/	
+#mapFeaturesPanel {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: auto;
+	z-index: 500;
+	background: #7868A7;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,.5);
+	color:#fff;
+}
+
+#mapFeaturesLegend {
+    height: 40px;
+    text-align: center;
+	background: #FFF;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3);
+	color:#666;
+}
+.map-view-legend-item {
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 40px;
+}
+
+/*-------------------------
+ feature selector
+-------------------------*/	
+#mapFeaturesSelector {
+    min-height: 100px;
+	margin: 0 45px;
+	position: relative;
+}
+
+#mapFeaturesSelector .app-list-item {
+    display: none;
+}
+#mapFeaturesSelector .app-list-item.current {
+    display: block;
+}
+
+#mapFeaturesPanel.minimized {
+height: 40px;
+overflow: hidden;
+}
+/*-------------------------
+	navigation
+-------------------------*/	
+#mapFeaturesNavigation {
+    top: 40px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+.noNav #mapFeaturesNavigation{
+	visibility: hidden;
+}
+.featureArrow{
+	position:absolute;
+	top:0;
+	bottom:0;
+	width:45px;
+	text-align:center;
+	line-height:60px;
+	cursor:pointer;
+}
+.featureArrow:hover {
+    background: rgba(0,0,0,.1);
+}
+#left-arrow {
+    left: 0;
+}
+#right-arrow {
+    right: 0;
+}
+/*-------------------------
+	indicators
+-------------------------*/	
+#mapFeatureIndicators {
+	position: absolute;
+	text-align: center;
+	left: 50px;
+	right: 50px;
+	bottom: 0;
+	height: 20px;
+}
+
+.map-feature-indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background: #fff;
+    margin: 5px;
+    opacity: .3;
+}
+.map-feature-indicator.current {
+    opacity: .9;
+}
+
+/*--------------------------------------------------------------------------------------/
+	2 | LIST #listView
+---------------------------------------------------------------------------------------*/
+#appListViewContent {
+	top:50px;
+}
+.upcomingConferences-dataset #appListViewContent {
+	top: 0px;
+}
+/*#appListViewContent .app-list-item {
+	margin: 5px;
+	background: #fff;
+	box-shadow: 0 0 2px 0px rgba(0,0,0,.5);
+}*/
+#appListViewContent .app-list-item {
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	color: #888;
+}
+#appListViewContent .app-list-item.inPlanner {
+	background:url(http://webapps-cdn.esri.com/graphics/ui/check-blue-50.png) no-repeat 95% 10px;
+	background-size: 40px 40px;
+}
+
+#appListViewContent .app-list-item:hover {
+background-color: rgba(0,0,0,.1);
+}
+
+#appListViewContent .app-list-item-title {
+color: #444;
+}
+
+#appList {
+	/* width: 100%; */
+	/* height: 100%; */
+	/* background:#ddd; */
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+}
+/*-------------------------
+	Result Dividers
+-------------------------*/		
+/*#appListHeader {
+	box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}*/
+#appListHeader {
+	box-shadow: 0 0 1px 0px rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	/* border-top: #666; */
+}
+
+/*.app-list-divider {
+	line-height: 28px;
+	height: 28px;
+	background:url(http://webapps-cdn.esri.com/graphics/ui/minus-sign-10-white.png) no-repeat 5px center;
+	background-color: #007ac2;
+	position: relative;
+	font-weight:bold;
+	cursor:pointer;
+	padding-left: 30px;
+	color:#023;
+	
+}
+*/.app-list-divider {
+	line-height: 30px;
+	background:url(http://webapps-cdn.esri.com/graphics/ui/minus-sign-10-white.png) no-repeat 5px center;
+	background-color: #CBCBCB;
+	position: relative;
+	cursor:pointer;
+	padding-left: 30px;
+	color: #666;
+	
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.app-list-divider.collapsed {
+	background:url(http://webapps-cdn.esri.com/graphics/ui/plus-sign-10-white.png) no-repeat 5px center;
+	background-color: #CBCBCB;
+}
+/*.app-list-divider-count {
+    position: absolute;
+    right: 5px;
+    top: -20px;
+    font-weight: normal;
+}*/
+.app-list-divider-count {
+    position: absolute;
+    right: 5px;
+    top: -23px;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #888;
+    font-size: 14px;
+}
+#appListHeader .app-list-divider-count {
+	top: 2px;
+}
+
+.app-list-divider-content {
+    position: relative;
+	height:auto;
+}
+.app-list-divider-content.collapsed  {
+    position: relative;
+	height:0px;
+	padding:2px;
+}
+
+.no-list-message{
+	text-align:center;
+	margin:20px auto;
+}
+/*----------------------------->
+	* | Single List Item
+<-----------------------------*/
+.app-list-item {
+	padding: 5px;
+    font-size: 12px;
+	min-height: 40px;
+	cursor:pointer;
+}
+.collapsed .app-list-item{
+	display:none;
+}
+
+.app-list-item-logo {
+    float: left;
+    width: 100px;
+    margin-right: 10px;
+}
+
+.app-list-item-logo-holder {
+    clear: both;
+    height: 60px;
+    float: left;
+    width:110px;
+}
+
+.app-list-item-title{
+
+	font-size: 18px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	letter-spacing: 1.5px;
+	margin-bottom: 6px;
+}
+
+.app-list-item-location{
+    font-size: 12px;
+}
+
+.app-list-item-time{
+    margin: 5px 0;
+}
+
+.app-list-item-eventType{
+
+}
+
+
+/*--------------------------------------------------------------------------------------/
+	GRID VIEW
+---------------------------------------------------------------------------------------*/
+#appGridViewContent {
+	top:50px;
+}
+/*-------------------------
+	GRID HEADER
+-------------------------*/
+#gridHeader {
+    background: #007ac2;
+    border-bottom: 1px solid #ddd;
+	overflow:hidden;
+    z-index: 3;
+    box-shadow: 0 0 3px 0;
+    position: relative;
+}
+
+#gridHeaderLabels {
+    padding-left: 60px;
+}
+.app-grid-header-label {
+    width: 110px;
+    float: left;
+    padding: 10px 5px;
+    height: 40px;
+    text-align: center;
+    background: #5B955B;
+    color: #fff;
+	cursor:pointer;
+}
+.app-grid-header-label.odd {
+   /* background: #006eae;*/
+}
+/*-------------------------
+	GRID BODY
+-------------------------*/
+/*times*/
+#gridBody {
+    overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+    position: absolute;
+
+	top: 60px;
+    background: #f7f7f7;
+}
+/*#gridTimesHolder{
+    position: fixed;
+    overflow: hidden;
+    width: 50px;
+   
+    top: 160px;
+    z-index: 2;
+	border-right: 1px solid #ddd;
+	background: #eee;
+}*/
+#gridTimesHolder{
+    position: absolute;
+    overflow: hidden;
+    width: 60px;
+   
+    top: 0;
+    z-index: 2;
+	border-right: 1px solid #ddd;
+	background: #eee;
+	text-align: center;
+}
+.app-grid-times {
+/*    width: 50px;
+    background: #eee;
+	z-index: 2;
+*/}
+.grid-time-label {
+/*    height: 48px;*/
+    line-height: 49px;
+    border-bottom: 1px solid #ddd;
+	padding-left:0;
+}
+.grid-time-label.day-label,
+.session-day-label-bar {
+    height: 24px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+	background-color: #007ac2;
+	color:#fff;
+}
+
+/*sessions*/
+/*-------------------------
+	Sessions Day
+-------------------------*/	
+.MWA-grid-sessions-day {
+	position: relative;
+	/*width: 750px;*/
+	/*height: 775px;*/
+	height: 1525px;
+	background: url(../img/grid-large.png) 60px 0;
+	min-width: 100%;
+}
+.small-grid-mode .MWA-grid-sessions-day {
+	height: 775px;
+}
+.large-grid-mode .MWA-grid-sessions-day {
+	height: 1525px;
+}
+.MWA-grid-sessions-day.collapsed{
+	height:25px;
+	overflow:hidden;
+	overflow-y:hidden;
+}
+
+
+/*-------------------------
+	Label bar
+-------------------------*/	
+.session-day-label-bar{
+	position:absolute;
+	padding-left:10px;
+	left:50px;
+}
+
+.session-day-label-bar.collapsible{
+	cursor:pointer;
+	padding-left:20px;
+	background-image:url('http://webapps-cdn.esri.com/graphics/ui/minus-sign-10-white.png');
+	background-repeat:no-repeat;
+	background-position:left center;
+	
+}
+.session-day-label-bar.collapsible:hover{
+	background-color: #55a6d6;
+}
+.session-day-label-bar.collapsible.collapsed{
+	background-image:url('http://webapps-cdn.esri.com/graphics/ui/plus-sign-10-white.png');
+}
+
+.MWA-grid-sessions {
+   /* margin-left: 50px;*/
+	position: relative;
+/*	background: url(../img/grid-large.png) 55px 0;*/
+	min-width:100%;
+}
+
+.grid-session-cell {
+    position: absolute;
+    width: 118px;
+    overflow: hidden;
+    border: 1px solid #bbb;
+	font-size:12px;
+	cursor:pointer;
+	background: rgba(91,148,90,.85);
+	color: #fff;
+}
+.desktop-mode .grid-session-cell:hover,
+.device-mode .grid-session-cell.popup {
+    box-shadow: 0 0 2px 0px rgba(0,0,0,.6);
+    z-index: 10;
+    margin: -10px;  
+/*    padding: 10px;
+*/    width: 138px;
+	padding-bottom:35px;
+	min-height: 120px;
+}
+/*.grid-session-cell.inAgenda {
+background: #ceebd2;
+}*/
+.grid-session-title{
+	padding:4px;
+}
+.grid-session-offerings {
+	padding: 0 4px;
+	margin-top: -4px;
+}
+.grid-agenda-btn{
+	top:auto;
+	height:34px;
+	display:none;
+	text-align:center;
+	line-height: 34px;
+	margin: 2px;
+	box-shadow: 0 1px 2px 0px rgba(0,0,0,.3);
+}
+
+/*.grid-agenda-btn.add-btn{
+	background: #ceebd2;
+	border: 1px solid #35ac46;
+}
+.grid-agenda-btn.remove-btn{
+	background: #F8CDD2;
+	border: 1px solid #B93039;
+}
+
+.grid-agenda-btn:hover{
+	border:1px solid #fff;
+}*/
+
+.desktop-mode .grid-session-cell.inAgenda:hover .remove-btn,
+.desktop-mode .grid-session-cell:hover .add-btn,
+.device-mode .grid-session-cell.inAgenda.popup .remove-btn,
+.device-mode .grid-session-cell.popup .add-btn{
+	display:block;
+}
+
+
+/*--------------------------------------------------------------------------------------/
+	DETAILS and TEXT
+---------------------------------------------------------------------------------------*/
+/*----------------------------->
+	* | Head
+<-----------------------------*/
+#appTextHead,#appDetailsHead {
+    padding: 30px;
+    background: #35ac46;
+    color: #fff;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.5);
+    z-index: 1;
+    position: relative;
+	font-size:16px;
+}
+
+.app-text-head-title,
+.app-details-head-title  {
+	font-size: 26px;
+	
+	margin-bottom: 10px;
+	padding-bottom: 14px;
+	border-bottom: 1px solid #eee;
+}
+.app-text-head-title{
+	text-shadow: 0 1px 1px #333;
+}
+/*----------------------------->
+	* | Body
+<-----------------------------*/
+
+#appTextBody,#appDetailsBody {
+    background: #fff;
+    min-height: 300px;
+    padding: 20px 30px;
+    font-size: 16px;
+	line-height: 21px;
+	color: #777;
+}
+
+.app-text-body-title,
+.app-details-body-title{
+	font-weight:bold;
+	margin-bottom:5px;
+}
+
+/*----------------------------->
+	Details Specific
+<-----------------------------*/
+#appDetailsWrapper {
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+	left:0;
+	right:0;
+	z-index: 1000;
+    background: #fff;
+	overflow: auto;
+}
+#appDetailsClose {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 50px;
+	width: 50px;
+	z-index: 2;
+	text-align: center;
+	background:url(http://webapps-cdn.esri.com/graphics/ui/generic-inline-icon.png) no-repeat center;
+	font-size:10px;
+	line-height:50px;
+	color:#fff;
+	cursor:pointer;
+}
+
+.app-details-body-asset{
+	padding:	5px 0;
+}
+.app-details-body-author {
+}
+/*----------------------------->
+	DEV JSON
+<-----------------------------*/
+.toggleable-dev-block {
+    padding-top: 50px;
+    cursor: pointer;
+    height: 0;
+    overflow: hidden;
+}
+.toggleable-dev-block.active {
+    height: auto;
+    padding-top: 0;
+}
+/*----------------------------->
+	FILTERABLES
+<-----------------------------*/
+.app-details-filterable-link {
+    color: #5B955B;
+    font-size: 18px;
+}
+.app-details-filterable {
+    margin-top: 15px;
+}
+.app-details-filterable-label {
+    color: #bbb;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+
+/*----------------------------->
+	EXHIBITORS
+<-----------------------------*/
+.app-details-head-booth{
+}
+/*----------------------------->
+	OFFERINGS
+<-----------------------------*/
+.app-offering-item{
+	border: 1px solid #257830;
+	padding: 8px 15px;
+	font-size: 14px;
+	background: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	margin: 2px 0;
+}
+
+.app-offering-item.current{
+	background:rgba(0,0,0,.3);
+}
+
+.app-offering-menu{
+	display:none;
+	text-align:left;
+	margin: 10px 0 0 0;
+}
+
+.app-offering-item.current .app-offering-menu{
+display:block;
+}
+
+.app-offering-button {
+	height: 40px;
+	line-height: 40px;
+	background: #EEE;
+	display: inline-block;
+	margin-right: 10px;
+	width: 200px;
+	color: #444;
+	cursor: pointer;
+	text-align: center;
+}
+
+.phone-mode .app-offering-button {
+
+margin-right: 5%;
+width: 45%;
+}
+/*----------------------------->
+	ASSETS
+<-----------------------------*/

@@ -1,0 +1,491 @@
+@charset "utf-8";
+/* Events App Stylesheet 
+panel purple:#7868A7
+green: 5B955B
+*/
+
+/*--------------------------------------------------------------------------------------/
+	# | reset
+---------------------------------------------------------------------------------------*/
+*{
+	margin:0;
+	padding:0;
+}
+html,body{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	overflow:hidden;
+	font-family:Arial, Helvetica, sans-serif;
+}
+/*--------------------------------------------------------------------------------------/
+	# | Applcation Basics
+---------------------------------------------------------------------------------------*/
+#appWrapper{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	overflow:hidden;
+	color: #676767;
+		
+}
+
+.app-drawer{
+	width:280px;
+	background-color:#fefefe;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+}
+/*-------------------------
+	Header
+-------------------------*/	
+.app-drawer-header {
+color: #fff;
+background: #404040;
+}
+
+.app-menudrawer-button {
+    margin: 10px auto;
+    text-align: center;
+    background: #fff;
+    width: 200px;
+    padding: 10px 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+	cursor:pointer;
+}
+
+
+/*-------------------------
+	Content
+-------------------------*/	
+.menu-divider{
+	background:#A5A8AA;
+	text-transform:uppercase;
+	font-size:16px;
+	font-weight:bold;
+	padding:4px 10px;
+	text-align:left;
+}
+
+.menu-option {
+	padding: 10px;
+	padding-right:40px;
+
+	cursor: pointer;
+	border-top: 1px solid #FFF;
+	border-bottom: 1px solid #DDD;
+	min-height: 40px;
+	text-align:left;
+}
+.menu-option:hover{
+	background-color:#AAD04B;
+}
+.menu-option.current {
+	border-left: 10px solid rgba(0,0,0,.4);
+}
+.menu-list{
+	position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 50px;
+    overflow: hidden;
+    overflow-y: auto;
+	text-align:left;
+}
+
+/*--------------------------------------------------------------------------------------/
+	# | menuDrawer
+---------------------------------------------------------------------------------------*/
+#menuDrawer{
+	right:auto;
+}
+.show-filter-panel #menuDrawer{
+	display:none;
+}
+/*#loginOption{
+	background:#ddd;
+	height:50px;
+}*/
+/*-------------------------
+	conferenceSelectMenu
+-------------------------*/	
+#conferenceSelectList {
+
+}
+/*-------------------------
+	conferenceMenu
+-------------------------*/	
+#conferenceMenuList {
+
+}
+#conferenceMenuList .menu-option{
+	line-height:40px;
+}
+
+/*--------------------------------------------------------------------------------------/
+	# | menuDrawer Popups
+---------------------------------------------------------------------------------------*/
+.menu-drawer-popup {
+    top: 50px;
+	background: #eee;
+	display: none;
+	border-top: 1px solid #ddd;
+	text-align:center;
+}
+.menu-drawer-popup.active {
+    display: block;
+}
+.menu-drawer-popup form{
+	padding: 10px;
+}
+
+.menu-drawer-popup input[type=text],
+.menu-drawer-popup input[type=password] {
+    display: block;
+    padding: 4px;
+    font-size: 16px;
+    width: 245px;
+    margin-bottom: 10px;
+	border: 1px solid #999;
+}
+.menu-drawer-popup label {
+    padding-top: 5px;
+    display: block;
+    padding-bottom: 5px;
+	text-align: left;
+}
+/*-------------------------
+	LOGIN
+-------------------------*/	
+#loginBlock {
+	height: 50px;
+	padding-left: 20px;
+	margin-right: 60px;
+}
+	
+.app-login-panel{
+	cursor:pointer;
+	height:50px;
+}
+
+.app-login-panel h3 {
+	line-height: 50px;
+}
+.app-login-panel.loading {
+    background: url(http://webapps-cdn.esri.com/graphics/ui/globe-loader.gif) no-repeat 130px center;
+}
+
+#loginMenu {
+
+}
+
+
+
+#loginMenu .app-menudrawer-button {
+	display: block;
+	border:none;
+	margin-top:20px;
+}
+/*-------------------------
+	settingsMenu
+-------------------------*/	
+#settingsButton {
+	height: 50px;
+	width:59px;
+	position:absolute;
+	right:0;
+	border-left:1px solid #eee;
+	text-align:center;
+	top:0;
+	line-height:50px;
+	cursor:pointer;
+	background: url(http://webapps-cdn.esri.com/graphics/ui/generic-inline-icon.png) center center no-repeat;
+}
+#settingsMenu {
+
+}
+/*-------------------------
+	Profile Menu
+-------------------------*/	
+#profileMenu {
+
+}
+/*--------------------------------------------------------------------------------------/
+	# | filterDrawer
+---------------------------------------------------------------------------------------*/
+#filterDrawer{
+	left:auto;
+	display:none;
+}
+.show-filter-panel #filterDrawer{
+	display:block;
+}
+/*Menu */
+#appFilterMenu {
+}
+#appFiltersInfo {
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+}
+#appFilteredResultsCount {
+    font-size: 21px;
+}
+
+/*-------------------------
+	keyword
+-------------------------*/	
+#appKeywordFilter {
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+}
+#keywordInput {
+	margin: 5px;
+	width: 228px;
+	padding: 5px;
+}
+/*-------------------------
+	filterables
+-------------------------*/	
+.app-filterable,.app-filterable-option  {
+	padding: 0 5px;
+	line-height: 40px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	position:relative;
+}
+
+#viewResultsButton {
+	background-color:#35ac46;
+}
+#appFiltersButtons {
+	padding: 10px 0;
+}
+
+#appFilterableOptions{
+	background:#fff;
+	display:none;
+}
+#appFilterableOptionsLabel{
+	padding: 0 5px;
+	line-height: 40px;
+	border-top: 1px solid #fff;
+	border-bottom: 1px solid #ccc;
+	cursor: pointer;
+	font-weight:bold;
+	position: relative;
+}
+
+.filter-option-count {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    color:#999;
+}
+/*-------------------------
+	with a Filter Selected
+-------------------------*/	
+#filterDrawer.filter-selected #appFiltersInstructions,
+#filterDrawer.filter-selected #appKeywordFilter,
+#filterDrawer.filter-selected #appFilterables,
+#filterDrawer.filter-selected #appFiltersButtons
+{
+	display:none;
+}
+
+#filterDrawer.filter-selected #appFilterableOptions{
+	display:block;
+}
+
+.app-filterable-options {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    background: #f2f2f2;
+}
+
+.app-filterable-option {
+	color: #888;
+	padding-left: 20px;
+}
+.app-filterable-option.active {
+	background: #b9e0f7;
+	color: #000;
+}
+/*--------------------------------------------------------------------------------------/
+	# | viewsPanel
+---------------------------------------------------------------------------------------*/
+#viewsPanel{
+	position:absolute;
+	background: #fff;
+	top:0;
+	width:100%;
+	bottom:0;
+	overflow:hidden;
+	overflow-y:auto;
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.75);
+	background: url(http://webapps-cdn.esri.com/graphics/ui/globe-loader.gif) no-repeat center center #fff;
+/*
+	transition: left .5s;
+	-webkit-transition: left .5s;
+*/
+	
+	transform: translate3d(0px,0px,0px);
+	-webkit-transform: translate3d(0px,0px,0px);
+}
+.show-menu-panel #viewsPanel{
+	/* left:250px; */
+}
+.show-filter-panel #viewsPanel{
+	/* left:-250px; */
+}
+/*-------------------------
+	viewPanelHeader - menu for the views panel
+-------------------------*/	
+#viewsPanelHeader{
+	color:#fff;
+	position:absolute;
+	top:0;
+	left:0;
+	height:50px;
+	right:0;
+	background-color:#eee;
+
+	box-shadow: 0 0 2px 1px rgba(0,0,0,.3);
+	z-index: 12;
+  background: #0089d8; /* Old browsers */
+  background: -moz-linear-gradient(top, #0089d8 0%, #007ac2 65%, #0068a5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0089d8), color-stop(65%,#007ac2), color-stop(100%,#0068a5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #0089d8 0%,#007ac2 65%,#0068a5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #0089d8 0%,#007ac2 65%,#0068a5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #0089d8 0%,#007ac2 65%,#0068a5 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #0089d8 0%,#007ac2 65%,#0068a5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0089d8', endColorstr='#0068a5',GradientType=0 ); /* IE6-9 */
+  background: #7868A7;
+}
+
+.headerDrawerToggle{
+	width:50px;
+	text-align:center;
+	line-height:50px;
+	background-color:rgba(0,0,0,.2);
+	cursor:pointer;
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+}
+
+#menuButton{
+	background: url(http://webapps-cdn.esri.com/graphics/ui/menu-sign-48-sm-white.png) center no-repeat rgba(0, 0, 0, 0.2);
+}
+#filterButton{
+	right:0;
+	left:auto;
+}
+/*-------------------------
+	viewsPanelTitle - View Title (has conference name as well.
+-------------------------*/	
+#viewsPanelTitle {
+padding: 0 60px;
+}
+#viewTitle {
+    font-size: 18px;
+    padding-top: 10px;
+}
+#viewSubTitle {
+    font-size: 11px;
+    margin-top: -3px;
+}
+/*-------------------------
+	viewsPanelContent - views holder
+-------------------------*/	
+#viewsPanelContent {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+   /* border: 1px solid #fff;*/
+    overflow: hidden;
+    overflow-y: auto;
+	background: #FFF;
+}
+
+/*-------------------------
+	view panel modes
+-------------------------*/	
+.app-view-modes-bar {
+	height: 50px;
+	background-color: #fff;
+	z-index: 10;
+	position: relative;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,.3);
+}
+#textView .app-view-modes-bar{
+	display:none;
+}
+.app-view-modes-menu {
+    overflow: hidden;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #7868A7;
+}
+.app-view-mode-option {
+	line-height: 50px;
+	float: left;
+	width: 33%;
+	width: calc(100%/3);
+	text-align: center;
+	cursor:pointer;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.app-view-mode-option.current{
+	background-color: #fff;
+	box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+	position: relative;
+}
+/*--------------------------------------------------------------------------------------/
+	# | VIEWS
+---------------------------------------------------------------------------------------*/
+.app-view{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	display:none;
+	box-shadow: 0 0 2px 0 rgba(0,0,0,.5);
+}
+.app-view.current{
+	display:block;
+}
+/*-------------------------
+	View COntent
+-------------------------*/	
+.app-view-content {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: auto;
+}
+.has-menu-bar .app-view-content {
+    top: 40px;
+}
+
