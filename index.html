@@ -17,8 +17,8 @@ if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") =
 
 </head>
 
-<body onhashchange="App.hashChangeHandler();">
-<div id="appWrapper" class="init-view init-dataset">
+<body>
+<!--<div id="appWrapper" class="init-view init-dataset">
 	<div id="menuDrawer" class="app-drawer"></div>
     <div id="filterDrawer" class="app-drawer"></div>
     <div id="viewsPanel" >
@@ -27,12 +27,14 @@ if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") =
             <div id="filterButton" class="headerDrawerToggle" onclick="App.toggleFilterDrawer();"> filter </div>
             <div id="viewsPanelTitle"></div>
         </div>
-        <!-- render views here -->
         <div id="viewsPanelContent" onclick="App.closeDrawers()"></div>
     </div>
-</div>
+</div>-->
 <script>
-	Craydent.DEBUG_MODE = true;
+Craydent.DEBUG_MODE = true;
+var specs = {devmode:Craydent.DEBUG_MODE};
+new ResponsiveApplicationHarness(specs);  
+/*	Craydent.DEBUG_MODE = true;
 
 	var specs = {devmode:true};
 	 var App;
@@ -45,7 +47,7 @@ if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") =
 
     function pgInit() {
         App = new PhoneGapEventsApp(specs);        
-    }
+    }*/
 </script>
 </body>
 </html>

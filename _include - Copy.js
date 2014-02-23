@@ -33,16 +33,13 @@ scripts.push(
 	"libs/greensock/TweenMax.min.js",
 	"libs/greensock/jquery.gsap.min.js",
 	//"jquery.touchSwipe.min.js",
-	"utils.js",
 	"RAHconfig.js",
 	"ResponsiveApplicationHarness.craydent.jquery.js",
 
 	
 //modules
-	"modules/ViewController.js",	
-	"modules/DrawerController.js"/*,	
 	"modules/DatasetFilterer.js",	
-	"modules/Responsivizer.craydent.jquery.js"*/
+	"modules/Responsivizer.craydent.jquery.js"
 	
 );
 
@@ -50,11 +47,10 @@ var
 styles_dir = web_dir+"css/",
 styles =[
 	//"jquery.mobile.structure-1.3.2.min.css",
-/*	"ui-basics.css",
+	"ui-basics.css",
 	"styles.css",
 	"views.css",
-	"responsivizer.css"*/
-	"rah.css"
+	"responsivizer.css"
 ],
 script,style,sc,st,
 sc_len = scripts.length,st_len = styles.length;

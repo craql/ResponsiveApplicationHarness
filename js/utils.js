@@ -1,5 +1,5 @@
-// Events App Utils
-
+// RAH Utils
+var __clearDiv__ ='<div class="clear"></div>';
 function UTCcheck(){
 	var s = new Date();
 	return (s.getUTCSeconds() + (s.getUTCMilliseconds()/1000));

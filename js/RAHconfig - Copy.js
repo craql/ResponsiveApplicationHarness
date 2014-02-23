@@ -2,21 +2,7 @@
 
 var RAHconfig = function(){
 	return {
-/*--------------------------------------------------------------------------------------/
-	Header Buttons | Buttons on the views panel header
----------------------------------------------------------------------------------------*/
-	headerButtons:[
-		{
-			name:'leftMenu',
-			action:'App.toggleMenuDrawer(\'left\')',
-			side:'left'
-		},
-		{
-			name:'rightMenu',
-			action:'App.toggleMenuDrawer(\'right\')',
-			side:'right'
-		}
-	],	
+	
 /*--------------------------------------------------------------------------------------/
 	MENUS | The three + tiered menu 
 ---------------------------------------------------------------------------------------*/
@@ -45,39 +31,10 @@ var RAHconfig = function(){
 		}
 	},
 /*--------------------------------------------------------------------------------------/
-	POPUP MENUS | One visible per drawer
----------------------------------------------------------------------------------------*/
-	popupMenus:{
-		'developer':{
-			title:'Developer Menu',
-			renderFunction:function(){
-				
-			}
-			//can also use renderTemplate
-		},
-		'coreyH':{
-			title:'Corey Hadden',
-			parentMenu:'developer',
-			renderFunction:function(){
-				return 'Corey Hadden\'s menu';
-			}
-			//can also use renderTemplate
-		}
-	},
-/*--------------------------------------------------------------------------------------/
 	VIEWS | ALL the in-app screens
 ---------------------------------------------------------------------------------------*/
-	initialView:'helloWorld',
-	views:{
-	'helloWorld':{
-		dataset:'upcomingConferences',
-		defaultMode:'list',
-		modes:['list'],
-		title:'hello World',
-		id:'helloWorld'
-	},
 //modes: list,grid,map	
-
+	views:{
 		'eventSelect':{
 			dataset:'upcomingConferences',
 			defaultMode:'list',
