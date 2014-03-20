@@ -69,13 +69,21 @@ var RAHconfig = function(){
 ---------------------------------------------------------------------------------------*/
 	initialView:'helloWorld',
 	views:{
-	'helloWorld':{
-		dataset:'upcomingConferences',
-		defaultMode:'list',
-		modes:['list'],
-		title:'hello World',
-		id:'helloWorld'
-	},
+		'helloWorld':{
+			dataset:'upcomingConferences',
+			defaultMode:'list',
+			modes:['list'],
+			title:'hello World',
+			id:'helloWorld'
+		},
+		'swipeable':{
+			dataset:'upcomingConferences',
+			defaultMode:'swipe',
+			modes:['swipe'],
+			title:'Swipe Panels',
+			id:'swipeable'
+		},
+
 //modes: list,grid,map	
 
 		'eventSelect':{
@@ -147,6 +155,14 @@ var RAHconfig = function(){
 		
 	},
 	viewModes:[
+		{mode:'swipe',
+			contentTemplate:
+			'<div id="appSwipeViewContent" class="app-view-content">'+
+				
+			'</div>', 
+		init:function(view){
+			logit('Initializing Swipeable');
+		}},
 		{mode:'map',
 			contentTemplate:
 			'<div id="appMapViewContent" class="app-view-content">'+

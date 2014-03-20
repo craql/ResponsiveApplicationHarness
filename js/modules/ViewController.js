@@ -150,13 +150,13 @@ function ViewController(parent,specs){
 		
 	
 	//update map in multiview
-		if(App.multiViewActive && $('body').hasClass('multi-view')){
+		/*if(App.multiViewActive && $('body').hasClass('multi-view')){
 			this.populateMap();
-		}
+		}*/
 	
 	//update view header
 	var titleHtml = '<div id="viewTitle">'+(view.title || view.dataset.capitalize())+'</div>';
-	titleHtml += (self.Data.conference)?'<div id="viewSubTitle">'+App.Data.conference.results[0].fullname+'</div>':'';
+	titleHtml += (view.Subtitle)?'<div id="viewSubTitle">'+view.subTitle+'</div>':'';
 	this.viewTitle.html(titleHtml);
 	
 	//fix to show menu when conference selected
