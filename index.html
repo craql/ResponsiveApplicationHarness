@@ -31,11 +31,11 @@ if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") =
     </div>
 </div>-->
 <script>
-Craydent.DEBUG_MODE = true;
+/*Craydent.DEBUG_MODE = true;
 var specs = {devmode:Craydent.DEBUG_MODE};
 new ResponsiveApplicationHarness(specs); 
-initHammer($('body')[0]); 
-/*	Craydent.DEBUG_MODE = true;
+initHammer($('body')[0]); */
+	Craydent.DEBUG_MODE = true;
 
 	var specs = {devmode:true};
 	 var App;
@@ -47,8 +47,9 @@ initHammer($('body')[0]);
     }
 
     function pgInit() {
-        App = new PhoneGapEventsApp(specs);        
-    }*/
+        App = new ResponsiveApplicationHarness(specs);   
+		initHammer($('body')[0]);     
+    }
 	
 function initHammer(obj){
 	var p = Hammer(obj,{
