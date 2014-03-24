@@ -3,7 +3,7 @@ created by Chadden: 1.2014
 last updated:
 */
 var includes = "",
-web_dir = "",
+web_dir = "/",
 product="ResponsiveApplicationHarness";
 switch(location.hostname){
 /*	case 'webapps-cdn-stg.esri.com':
@@ -17,7 +17,7 @@ switch(location.hostname){
 	case 'localhost':
 	case 'localhost:81':
 	default:
-		web_dir = '/';
+//		web_dir = '/';
 		web_dir = 'http://'+location.hostname+':'+location.port+"/"+product+"/";
 	break;
 }
@@ -26,12 +26,14 @@ var
 scripts_dir = web_dir+"js/",
 scripts = [];
 if (typeof jQuery == 'undefined') {  
-   scripts.push("libs/jquery-1.10.2.min.js");
+   scripts.push("libs/jquery-1.11.0.min.js");
 }
 scripts.push(
-	"libs/craydent-1.7.18.js",
+	"libs/craydent-1.7.21.js",
 	"libs/greensock/TweenMax.min.js",
 	"libs/greensock/jquery.gsap.min.js",
+	"libs/hammer.min.js",
+	
 	//"jquery.touchSwipe.min.js",
 	"utils.js",
 	"RAHconfig.js",
