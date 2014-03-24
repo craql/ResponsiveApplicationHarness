@@ -48,6 +48,48 @@ new ResponsiveApplicationHarness(specs);
     function pgInit() {
         App = new PhoneGapEventsApp(specs);        
     }*/
+	
+function initHammer(obj){
+	var p = Hammer(obj,{
+		tap:false,
+
+		drag_lock_to_axis: true,
+		preventDefault:true}
+	).on('release swipeleft swiperight dragleft dragright',
+	function(ev){
+		ev.gesture.preventDefault();
+		var dir = ev.gesture.direction;
+		var opp = (dir=='left')?'right':'left';
+		var deltaX	=ev.gesture.deltaX;
+		switch(ev.type){
+			case 'dragleft':
+			case 'dragright':
+				$(ev.srcElement).parents('#viewsPanel')[0].style.left = deltaX+'px';
+				//$(ev.srcElement).css('left',deltaX+'px')
+			break;
+			case 'release':
+				logit(deltaX);
+			break;
+
+			case 'swipeleft':
+			case 'swiperight':
+				if(App.container.hasClass('show-'+dir+'-drawer')){
+					App.toggleMenuDrawer(dir);
+				}else if(App.container.hasClass('show-'+opp+'-drawer')){
+					App.toggleMenuDrawer(opp);
+				}else{
+					App.toggleMenuDrawer(opp);
+				}
+			
+			break;
+		}
+		if(window.console){
+			console.log(ev.type);
+			console.log(ev);
+		}
+	}
+)
+}
 </script>
 </body>
 </html>
