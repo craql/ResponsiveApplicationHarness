@@ -33,7 +33,8 @@ if(!location.hostname && location.href.indexOf("ResponsiveApplicationHarness") =
 <script>
 Craydent.DEBUG_MODE = true;
 var specs = {devmode:Craydent.DEBUG_MODE};
-new ResponsiveApplicationHarness(specs);  
+new ResponsiveApplicationHarness(specs); 
+initHammer($('body')[0]); 
 /*	Craydent.DEBUG_MODE = true;
 
 	var specs = {devmode:true};
@@ -51,24 +52,97 @@ new ResponsiveApplicationHarness(specs);
 	
 function initHammer(obj){
 	var p = Hammer(obj,{
-		tap:false,
+		//tap:false,
 
 		drag_lock_to_axis: true,
 		preventDefault:true}
-	).on('release swipeleft swiperight dragleft dragright',
+	).on('tap release swipeleft swiperight dragleft dragright dragstart dragend',
 	function(ev){
 		ev.gesture.preventDefault();
 		var dir = ev.gesture.direction;
 		var opp = (dir=='left')?'right':'left';
 		var deltaX	=ev.gesture.deltaX;
+		var panel = $('#viewsPanel')[0];
+		var fingerSize = 40;
 		switch(ev.type){
+			case 'dragstart':
+				if(//closed menus
+				!App.container.hasClass('show-'+dir+'-drawer')
+				&& !App.container.hasClass('show-'+opp+'-drawer')
+				&&(ev.gesture.center.pageX <fingerSize || ev.gesture.center.pageX >$(document).width() - fingerSize )
+				){
+					$('#viewsPanel').addClass('open-dragging');
+				}else if(//open menus
+					App.container.hasClass('show-'+dir+'-drawer')
+					&& $(ev.srcElement).parents('#viewsPanel').length != 0 //it is in the viewsPanel
+				){
+					$('#viewsPanel').addClass('close-dragging').data('s-offset',$('viewsPanel').style.left);
+				}
+			break;
+			case 'dragend':
+				if($('#viewsPanel').hasClass('open-dragging')){
+					var opened = parseInt($('viewsPanel').style.left);
+					if(
+						(opened > 140 && dir =='right')
+						|| (opened < -140 && dir =='left')
+					){
+						//App.container.addClass('show-left-drawer');
+						App.toggleMenuDrawer(opp);
+						
+					}
+					else {//not opened enough
+						App.container.addClass('show-'+opp+'-drawer');
+						App.toggleMenuDrawer(opp);
+					}
+				}
+				else if($('#viewsPanel').hasClass('close-dragging')){
+					var closed = parseInt($('viewsPanel').style.left);
+					if(
+						(opened > 140 && dir =='right')
+						|| (opened < -140 && dir =='left')
+					){
+						//App.container.addClass('show-left-drawer');
+						App.toggleMenuDrawer(opp);
+						
+					}
+					else {//not opened enough
+						App.container.addClass('show-'+opp+'-drawer');
+						App.toggleMenuDrawer(opp);
+					}
+				}
+					$('#viewsPanel').removeClass('open-dragging close-dragging');
+				
+			break;
+			
 			case 'dragleft':
 			case 'dragright':
-				$(ev.srcElement).parents('#viewsPanel')[0].style.left = deltaX+'px';
+				/*if(
+					App.container.hasClass('show-'+dir+'-drawer') 
+					&& ev.gesture.center.pageX <280
+				){
+				panel.style.left = (ev.gesture.center.pageX+deltaX)+'px';
+				} */
 				//$(ev.srcElement).css('left',deltaX+'px')
+				if($('#viewsPanel').hasClass('open-dragging')){
+					if((dir == "right" && ev.gesture.center.pageX < 280 && ev.gesture.center.pageX > 0)
+					||(dir == "left" && ev.gesture.center.pageX > $(document).width() - 280 && ev.gesture.center.pageX < $(document).width())
+					){
+						panel.style.left = (deltaX)+'px';
+					}
+				}else if($('#viewsPanel').hasClass('close-dragging')){
+					if((dir == "left" && ev.gesture.center.pageX < 280 && ev.gesture.center.pageX > 0)
+					||(dir == "right" && ev.gesture.center.pageX > $(document).width() - 280 && ev.gesture.center.pageX < $(document).width())
+					){
+						var leftness = parseInt($(panel).data('s-offset')) + deltaX;
+						panel.style.left = leftness +'px';
+					}
+				}
 			break;
 			case 'release':
 				logit(deltaX);
+				if(ev.srcElement.click){
+					ev.srcElement.click();
+				}
 			break;
 
 			case 'swipeleft':
