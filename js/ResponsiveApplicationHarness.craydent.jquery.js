@@ -32,6 +32,7 @@ function ResponsiveApplicationHarness(specs){
 		this.initParams();
 		this.renderAppFramework();
 		this.renderContentFramework();
+		this.initData();
 		this.initUI();
 		
 	}
@@ -53,6 +54,13 @@ function ResponsiveApplicationHarness(specs){
 		this.current.results = null;
 		this.current.filters = {};
 		
+	}
+	
+	this.initData = function(){
+		App.config.dataFunctions = App.config.dataFunctions || {};
+		var callback =App.config.dataFunctions.globalDataHandler || logit;
+		var dataInit = App.config.dataFunctions.global || function(callback){callback({})};
+		dataInit(callback);
 	}
 	
 	this.initUI = function(data){
@@ -91,6 +99,8 @@ function ResponsiveApplicationHarness(specs){
 		self.showView();
 
 	}
+	
+	
 	
 /*--------------------------------------------------------------------------------------/
 	1 | Render
